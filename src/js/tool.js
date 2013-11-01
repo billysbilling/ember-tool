@@ -1,10 +1,12 @@
+var i18n = require('i18n');
+
 module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     template: require('../templates/tool'),
     
     classNameBindings: [':tool', 'iconClassName', 'large'],
 
-    tip: Em.I18n.tProperty('tip'),
-    text: Em.I18n.tProperty('text'),
+    tip: i18n.tProperty('tip'),
+    text: i18n.tProperty('text'),
     tipPosition: 'top',
 
     icon: null,
