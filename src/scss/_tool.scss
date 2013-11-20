@@ -6,7 +6,6 @@ $tool-inner-size: 14px;
     .tool {
         @include inline-block;
         @include unselectable;
-        cursor: pointer;
         line-height: $tool-size;
         height: $tool-size;
         overflow: hidden;
@@ -43,13 +42,17 @@ $tool-inner-size: 14px;
             color: $blue-gray-light;
         }
         
-        &:hover {
-            .svg-main {
-                fill: $blue;
-            }
-            
-            .text {
-                color: $blue;
+        &.has-action {
+            cursor: pointer;
+
+            &:hover {
+                .svg-main {
+                    fill: $blue;
+                }
+
+                .text {
+                    color: $blue;
+                }
             }
         }
     }

@@ -3,7 +3,8 @@ var i18n = require('i18n');
 module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     template: require('../templates/tool'),
     
-    classNameBindings: [':tool', 'iconClassName', 'large'],
+    classNames: ['tool'],
+    classNameBindings: ['action:has-action', 'iconClassName', 'large'],
 
     tip: i18n.tProperty('tip'),
     text: i18n.tProperty('text'),
