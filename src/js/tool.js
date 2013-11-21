@@ -1,4 +1,4 @@
-var i18n = require('i18n');
+var i18nContext = require('i18n-context');
 
 module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     template: require('../templates/tool'),
@@ -6,8 +6,8 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     classNames: ['tool'],
     classNameBindings: ['action:has-action', 'iconClassName', 'large'],
 
-    tip: i18n.tProperty('tip'),
-    text: i18n.tProperty('text'),
+    tip: i18nContext.tProperty('tip'),
+    text: i18nContext.tProperty('text'),
     tipPosition: 'top',
 
     icon: null,
