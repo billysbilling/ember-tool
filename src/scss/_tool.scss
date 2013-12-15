@@ -11,14 +11,12 @@ $tool-inner-size: 14px;
         overflow: hidden;
         
         svg {
-            float: left;
             margin: ($tool-size - $tool-inner-size)/2;
             width: $tool-inner-size;
             height: $tool-inner-size;
         }
         .text {
             cursor: pointer;
-            margin-left: $tool-size;
             font-size: $font-size;
         }
     
@@ -53,6 +51,23 @@ $tool-inner-size: 14px;
                 .text {
                     color: $blue;
                 }
+            }
+        }
+
+        &.icon-side-left {
+            .text {
+                margin-left: $tool-size;
+            }
+            svg {
+                float: left;
+            }
+        }
+        &.icon-side-right {
+            .text {
+                margin-right: $tool-size;
+            }
+            svg {
+                float: right;
             }
         }
     }

@@ -11,9 +11,10 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     tipPosition: 'top',
 
     icon: null,
+    iconSide: 'left',
     iconClassName: function() {
-        return 'tool-'+this.get('icon').replace('/', '-');
-    }.property('icon'),
+        return 'tool-'+this.get('icon').replace('/', '-') + ' icon-side-' + this.get('iconSide');
+    }.property('icon', 'iconSide'),
     
     action: null,
     target: null,
