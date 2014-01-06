@@ -4,7 +4,7 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     template: require('../templates/tool'),
     
     classNames: ['tool'],
-    classNameBindings: ['action:has-action', 'iconClassName', 'large'],
+    classNameBindings: ['hasAction', 'iconClassName', 'large'],
 
     tip: i18nContext.tProperty('tip'),
     text: i18nContext.tProperty('text'),
@@ -15,6 +15,10 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     iconClassName: function() {
         return 'tool-'+this.get('icon').replace('/', '-') + ' icon-side-' + this.get('iconSide');
     }.property('icon', 'iconSide'),
+
+    hasAction: function() {
+        return !!this.get('action');
+    }.property('action'),
     
     action: null,
     target: null,
