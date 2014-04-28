@@ -13,7 +13,12 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     icon: null,
     iconSide: 'left',
     iconClassName: function() {
-        return 'tool-'+this.get('icon').replace('/', '-') + ' icon-side-' + this.get('iconSide');
+        //Remove ember-svg css class (.xxxx) and title (@xxxx)
+        var icon = this.get('icon')
+            .replace('/', '-')
+            .replace(/\..+?$/, '')
+            .replace(/@.+?$/, '');
+        return 'tool-'+icon + ' icon-side-' + this.get('iconSide');
     }.property('icon', 'iconSide'),
 
     hasAction: function() {
