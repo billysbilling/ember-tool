@@ -13,15 +13,13 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     icon: null,
     iconSide: 'left',
     iconClassName: function() {
-        //Remove ember-svg css class (.xxxx) and title (@xxxx)
-        var icon = this.get('icon');
-
         //No icon
-        if (!icon) {
+        if (!this.get('icon')) {
             return null;
         }
 
-        icon
+        //Remove ember-svg css class (.xxxx) and title (@xxxx)
+        var icon = this.get('icon')
             .replace('/', '-')
             .replace(/\..+?$/, '')
             .replace(/@.+?$/, '');
