@@ -4,12 +4,17 @@ $tool-inner-size: 14px;
 
 @mixin tool {
     .tool {
-        @include inline-block;
-        @include unselectable;
+        display: inline-block;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
         line-height: $tool-size;
         height: $tool-size;
         overflow: hidden;
-        
+
         svg {
             margin: ($tool-size - $tool-inner-size)/2;
             width: $tool-inner-size;
@@ -19,27 +24,27 @@ $tool-inner-size: 14px;
             cursor: pointer;
             font-size: $font-size;
         }
-    
+
         &.large {
             $vpadding: ($large-tool-size - $tool-size)/2;
             height: $large-tool-size;
             padding: $vpadding 0px;
         }
-    
+
         &.large {
             $vpadding: ($large-tool-size - $tool-size)/2;
             height: $large-tool-size;
             padding: $vpadding 0px;
         }
-        
+
         .svg-main {
             fill: $blue-gray;
         }
-        
+
         .text {
             color: $blue-gray;
         }
-        
+
         &.has-action {
             cursor: pointer;
 
@@ -71,7 +76,7 @@ $tool-inner-size: 14px;
             }
         }
     }
-    
+
     .tools {
         .tool {
             float: left;
