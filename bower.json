@@ -1,6 +1,6 @@
 {
   "name": "ember-tool",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "homepage": "https://github.com/billysbilling/ember-tool",
   "main": "src/js/tool.js",
   "billy-builder": {
