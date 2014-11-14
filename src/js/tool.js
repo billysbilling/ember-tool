@@ -2,7 +2,7 @@ var i18nContext = require('i18n-context');
 
 module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     layout: require('../templates/tool'),
-    
+
     classNames: ['tool'],
     classNameBindings: ['hasAction', 'iconClassName', 'large'],
 
@@ -29,16 +29,16 @@ module.exports = Em.Component.extend(require('ember-tooltip').Tooltipable, {
     hasAction: function() {
         return !!this.get('action');
     }.property('action'),
-    
+
     action: null,
     target: null,
-    
+
     click: function(e) {
         var target = this.get('target'),
             action = this.get('action'),
             actionContext = this.get('actionContext');
         if (_.isString(target)) {
-            target = Ember.Handlebars.get(this, target);
+            target = Ember.get(this, target);
         }
         if (!target) {
             return;
