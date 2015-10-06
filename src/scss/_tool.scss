@@ -48,7 +48,7 @@ $tool-inner-size: 14px;
         &.has-action {
             cursor: pointer;
 
-            &:hover {
+            &:hover, &.hover {
                 .svg-main {
                     fill: $blue;
                 }
